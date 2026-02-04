@@ -69,7 +69,7 @@ terraform destroy -var-file=fixtures.tfvars
 | <a name="requirement_context"></a> [context](#requirement\_context) | 0.4.0 |
 | <a name="requirement_snowflake"></a> [snowflake](#requirement\_snowflake) | >= 0.96 |
 
-## Resources
+## Resource
 
 | Name | Type |
 |------|------|
