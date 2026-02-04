@@ -8,6 +8,8 @@ module "terraform_snowflake_user_1" {
   name    = "snowflake_user_1"
   comment = "Example Snowflake User"
 
+  snowflake_private_key = var.snowflake_private_key
+
   generate_rsa_key     = true
   generate_password    = true
   must_change_password = true
@@ -31,6 +33,8 @@ module "terraform_snowflake_user_2" {
   source            = "../../"
   name              = "snowflake_user_2"
   context_templates = var.context_templates
+
+  snowflake_private_key = var.snowflake_private_key
 
   type                       = "PERSON"
   generate_rsa_key           = true
@@ -59,6 +63,9 @@ module "terraform_snowflake_service_user" {
   type              = "SERVICE"
   name              = "service_user"
   context_templates = var.context_templates
+
+  snowflake_private_key = var.snowflake_private_key
+
   name_scheme = {
     context_template_name = "snowflake-service-user"
     extra_values = {
@@ -80,6 +87,9 @@ module "terraform_snowflake_legacy_service_user" {
   source = "../../"
   type   = "LEGACY_SERVICE"
   name   = "legacy_service_user"
+
+  snowflake_private_key = var.snowflake_private_key
+
   name_scheme = {
     properties = ["environment", "name", "stage", "project"]
     delimiter  = "_"
